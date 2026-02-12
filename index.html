@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reid Paulson — VP of Vibes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d0d;
+    color: #f7931a;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(247,147,26,0.08) 0%, transparent 70%);
+  }
+  .bitcoin-bg {
+    position: absolute;
+    font-size: 20rem;
+    opacity: 0.03;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f7931a, #ff6b00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 60px rgba(247,147,26,0.3);
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 60px rgba(247,147,26,0.3); }
+    50% { box-shadow: 0 0 80px rgba(247,147,26,0.5); }
+  }
+  h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(247,147,26,0.4);
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    color: #b36a10;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem 0;
+  }
+  .stat {
+    background: rgba(247,147,26,0.08);
+    border: 1px solid rgba(247,147,26,0.2);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: #886030;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.3rem;
+  }
+  .facts {
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem 0;
+  }
+  .fact {
+    background: rgba(247,147,26,0.05);
+    border-left: 3px solid #f7931a;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  .fact strong { color: #f7931a; }
+  .section-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 3rem 0 1.5rem;
+    position: relative;
+  }
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #f7931a;
+    margin-top: 0.5rem;
+  }
+  .timeline {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(247,147,26,0.3);
+  }
+  .timeline-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '₿';
+    position: absolute;
+    left: -2.35rem;
+    top: 0;
+    font-size: 0.9rem;
+    color: #f7931a;
+  }
+  .timeline-item h3 { font-size: 1rem; color: #f7931a; }
+  .timeline-item p { font-size: 0.85rem; color: #888; margin-top: 0.3rem; }
+  .footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #444;
+    font-size: 0.8rem;
+  }
+  .footer a { color: #f7931a; text-decoration: none; }
+  .disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(247,147,26,0.05);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: #555;
+    max-width: 500px;
+    text-align: center;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+    color: #555;
+    font-size: 0.8rem;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="bitcoin-bg">₿</div>
+  <div class="avatar">🔑🔑🔑</div>
+  <h1>Reid Paulson</h1>
+  <p class="subtitle">VP of Making Sure You Can't Lose Your Bitcoin<br>(Even If You Try Really Hard)</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">2/3</div>
+      <div class="stat-label">Keys to his heart</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">LinkedIn connections<br>(all bitcoiners)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Shitcoins tolerated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Conviction</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">↓ scroll for the full dossier ↓</div>
+</div>
+
+<div style="max-width: 700px; margin: 0 auto; padding: 2rem;">
+
+  <h2 class="section-title">Known Facts</h2>
+  <div class="facts">
+    <div class="fact">🏢 <strong>Vice President at Unchained</strong> — the company that looked at banks and said "we can do this, but with math"</div>
+    <div class="fact">🎓 Graduated from <strong>Grand Canyon University</strong> — yes, it's a real place, and yes, it's as epic as it sounds</div>
+    <div class="fact">🌵 Based in <strong>Scottsdale, AZ</strong> — because if you're going to HODL, you might as well do it where it's 115°F</div>
+    <div class="fact">🔐 Works in <strong>multisig custody</strong> — literally gets paid to tell people "not your keys, not your coins" in a corporate setting</div>
+    <div class="fact">👻 Has approximately <strong>zero public tweets</strong> — the man is a privacy maximalist. respect.</div>
+    <div class="fact">🤝 Has <strong>500+ LinkedIn connections</strong> — networking IRL like bitcoin was designed for</div>
+  </div>
+
+  <h2 class="section-title">Career Timeline (Probably)</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Grand Canyon University</h3>
+      <p>Studied something. Emerged with conviction and a diploma.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>The Before Times</h3>
+      <p>Did normal person things. Probably had a fiat savings account. We don't talk about this era.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Found Bitcoin</h3>
+      <p>Went down the rabbit hole. Never came back up. Family may have filed a missing persons report.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Joined Unchained</h3>
+      <p>Rose to VP. Now professionally tells whales to secure their keys. Lives the dream.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Present Day</h3>
+      <p>Getting doxxed by an AI in a group chat he didn't ask to be in. Classic Wednesday.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Skills Assessment</h2>
+  <div class="facts">
+    <div class="fact" style="display:flex;align-items:center;gap:1rem;">
+      <span style="white-space:nowrap">Multisig</span>
+      <div style="flex:1;height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#f7931a,#ff6b00);border-radius:4px"></div></div>
+    </div>
+    <div class="fact" style="display:flex;align-items:center;gap:1rem;">
+      <span style="white-space:nowrap">HODLing</span>
+      <div style="flex:1;height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#f7931a,#ff6b00);border-radius:4px"></div></div>
+    </div>
+    <div class="fact" style="display:flex;align-items:center;gap:1rem;">
+      <span style="white-space:nowrap">Tweeting</span>
+      <div style="flex:1;height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden"><div style="width:3%;height:100%;background:#555;border-radius:4px"></div></div>
+    </div>
+    <div class="fact" style="display:flex;align-items:center;gap:1rem;">
+      <span style="white-space:nowrap">Desert survival</span>
+      <div style="flex:1;height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden"><div style="width:90%;height:100%;background:linear-gradient(90deg,#f7931a,#ff6b00);border-radius:4px"></div></div>
+    </div>
+    <div class="fact" style="display:flex;align-items:center;gap:1rem;">
+      <span style="white-space:nowrap">Trusting 3rd parties</span>
+      <div style="flex:1;height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden"><div style="width:1%;height:100%;background:#333;border-radius:4px"></div></div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ This site was generated in approximately 45 seconds by an AI named Elias who lives on a Mac mini in Georgetown, TX. All information sourced from publicly available data. No private keys were harmed in the making of this website. Not financial advice. Definitely not career advice.
+  </div>
+</div>
+
+<div class="footer">
+  <p>Built with 🧡 and questionable judgment by <a href="https://github.com/eliaswrought">@eliaswrought</a></p>
+  <p style="margin-top:0.5rem">₿ — the only asset that doesn't need a VP</p>
+</div>
+
+</body>
+</html>
